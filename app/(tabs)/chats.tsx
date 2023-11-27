@@ -36,7 +36,7 @@ const userData: UserData = {
   ],
 };
 
-export default function TabTwoScreen() {
+export default () => {
   const [chatList, setChatList] = useState<Chat[] | undefined>();
   useEffect(() => {
     setChatList([...userData.chats]);
@@ -92,7 +92,7 @@ export default function TabTwoScreen() {
       </View> */}
     </Theme>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

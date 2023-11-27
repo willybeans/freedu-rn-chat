@@ -4,7 +4,7 @@ import EditScreenInfo from "../../components/EditScreenInfo";
 import { Text, View } from "../../components/Themed";
 import Demo from "../../components/TamaguiButton";
 
-export default function TabOneScreen() {
+export default () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -19,7 +19,7 @@ export default function TabOneScreen() {
       <EditScreenInfo path="app/(tabs)/index.tsx" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
