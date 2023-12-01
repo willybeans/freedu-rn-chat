@@ -17,7 +17,6 @@ export default function TabLayout() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: React.ComponentProps<typeof FontAwesome>["name"] =
             "code";
-          console.log("rote", route.name);
           switch (route.name) {
             case "index":
               iconName = "home";
@@ -32,7 +31,7 @@ export default function TabLayout() {
               iconName = "user";
               break;
             default:
-              break; //
+              break;
           }
           return <TabBarIcon name={iconName} color={color} />;
         },

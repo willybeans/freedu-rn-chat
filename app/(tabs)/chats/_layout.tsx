@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import { purple, grayDark } from "@tamagui/colors";
+import { Header } from "../../../components/Header";
 
 export default function ChatsLayout() {
   return (
@@ -16,7 +17,11 @@ export default function ChatsLayout() {
       })}
     >
       <Stack.Screen name="index" options={{ headerTitle: "Your Chats" }} />
-      <Stack.Screen name="[id]" options={{ headerTitle: "InsertName" }} />
+      <Stack.Screen
+        name="[id]"
+        // pass in users name
+        options={{ headerTitle: (props) => <Header {...props} /> }}
+      />
     </Stack>
   );
 }

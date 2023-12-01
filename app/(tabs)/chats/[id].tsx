@@ -20,8 +20,6 @@ const msgData: MsgData = {
       userName: "brian1",
       icon: "http://placekitten.com/100/400",
       text: "Hey I saw your last mes im not sure whatever thsisis is going",
-      //last message should come in full and be reduced in render
-      // chat id should be included for linking to websocket/db
     },
     {
       userId: "34567",
@@ -34,8 +32,6 @@ const msgData: MsgData = {
       userName: "brian1",
       icon: "http://placekitten.com/100/400",
       text: "Hey I saw your last messsage and i thought about it",
-      //last message should come in full and be reduced in render
-      // chat id should be included for linking to websocket/db
     },
     {
       userId: "34567",
@@ -72,7 +68,6 @@ export default () => {
               return (
                 <XStack // needs on click handler
                   key={i}
-                  // maxWidth={"50%"}
                   height={"60px"}
                   backgroundColor={"$purple5Dark"}
                   flex={1}
@@ -93,12 +88,6 @@ export default () => {
           </YStack>
         </ScrollView>
       </Theme>
-      {/* <View style={styles.container}>
-        <Text style={styles.title}>Tab Two</Text>
-        <View style={styles.separator} /> */}
-
-      {/* <EditScreenInfo path="app/(tabs)/two.tsx" />
-      </View> */}
     </Theme>
   );
 };
