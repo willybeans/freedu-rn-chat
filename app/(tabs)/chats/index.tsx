@@ -1,8 +1,6 @@
-import { StyleSheet } from "react-native";
 import { useState, useEffect } from "react";
 import { Theme, YStack, XStack, ScrollView, Text, Avatar } from "tamagui";
-import EditScreenInfo from "../../components/EditScreenInfo";
-// import { Text, View } from "../../components/Themed";
+import { Link, Href, LinkProps, HrefObject } from "expo-router";
 
 interface UserData {
   chats: Chat[];
@@ -12,6 +10,11 @@ type Chat = {
   userId: string;
   userName: string;
   lastMessageClip: string;
+};
+
+type Url = {
+  pathname: string;
+  params?: { id: string };
 };
 
 const userData: UserData = {
@@ -58,27 +61,37 @@ export default () => {
           <YStack>
             {chatList?.map((c, i) => {
               return (
-                <XStack // needs on click handler
+                <Link
                   key={i}
-                  // maxWidth={"50%"}
-                  height={"60px"}
-                  backgroundColor={"$purple5Dark"}
-                  flex={1}
-                  justifyContent="flex-start"
-                  alignItems="center"
-                  borderBottomWidth="2px"
-                  // borderStyle="solid"
-                  borderBottomColor={"black"}
+                  href={
+                    {
+                      //
+                      pathname: `/chats/12345`,
+                      // params: { id: "bacon" },
+                    } as HrefObject<Url>
+                  }
                 >
-                  <Avatar circular size="$3">
-                    <Avatar.Image src="http://placekitten.com/200/300" />
-                    <Avatar.Fallback bc="red" />
-                  </Avatar>
-                  <YStack>
-                    <Text>{c.userName}</Text>
-                    <Text>{c.lastMessageClip}</Text>
-                  </YStack>
-                </XStack>
+                  <XStack // needs on click handler
+                    // maxWidth={"50%"}
+                    height={"60px"}
+                    backgroundColor={"$purple5Dark"}
+                    flex={1}
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    borderBottomWidth="2px"
+                    // borderStyle="solid"
+                    borderBottomColor={"black"}
+                  >
+                    <Avatar circular size="$3">
+                      <Avatar.Image src="http://placekitten.com/200/300" />
+                      <Avatar.Fallback bc="red" />
+                    </Avatar>
+                    <YStack>
+                      <Text>{c.userName}</Text>
+                      <Text>{c.lastMessageClip}</Text>
+                    </YStack>
+                  </XStack>
+                </Link>
               );
             })}
           </YStack>
@@ -93,20 +106,3 @@ export default () => {
     </Theme>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
-});

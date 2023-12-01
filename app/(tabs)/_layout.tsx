@@ -17,6 +17,7 @@ export default function TabLayout() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: React.ComponentProps<typeof FontAwesome>["name"] =
             "code";
+          console.log("rote", route.name);
           switch (route.name) {
             case "index":
               iconName = "home";
@@ -30,6 +31,8 @@ export default function TabLayout() {
             case "profile":
               iconName = "user";
               break;
+            default:
+              break; //
           }
           return <TabBarIcon name={iconName} color={color} />;
         },
@@ -68,9 +71,12 @@ export default function TabLayout() {
         name="chats"
         options={{
           title: "Chats",
+          headerShown: false,
           // tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          // href: null, //tab wont show
         }}
       />
+
       <Tabs.Screen
         name="explore"
         options={{
