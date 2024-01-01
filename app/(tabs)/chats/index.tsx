@@ -73,14 +73,15 @@ export default () => {
                 >
                   <XStack // needs on click handler
                     // maxWidth={"50%"}
-                    height={"60px"}
+                    width={"100%"}
+                    marginBottom={"5px"}
                     backgroundColor={"$purple5Dark"}
                     flex={1}
                     justifyContent="flex-start"
                     alignItems="center"
-                    borderBottomWidth="2px"
+                    borderBottomWidth={2}
                     // borderStyle="solid"
-                    borderBottomColor={"black"}
+                    borderBottomColor={"white"}
                   >
                     <Avatar circular size="$3">
                       <Avatar.Image src="http://placekitten.com/200/300" />

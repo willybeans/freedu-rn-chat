@@ -24,8 +24,8 @@ export default function TabLayout() {
             case "chats":
               iconName = "wechat";
               break;
-            case "explore":
-              iconName = "search";
+            case "learn":
+              iconName = "pencil";
               break;
             case "profile":
               iconName = "user";
@@ -38,6 +38,7 @@ export default function TabLayout() {
         headerTintColor: grayDark.gray11,
         headerStyle: {
           backgroundColor: "black",
+          // height: 90,
         },
         headerTitleAlign: "center",
         tabBarActiveTintColor: purple.purple8,
@@ -77,9 +78,9 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="explore"
+        name="learn"
         options={{
-          title: "Explore",
+          title: "Learn",
           // tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

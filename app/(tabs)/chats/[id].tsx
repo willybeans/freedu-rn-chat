@@ -19,7 +19,7 @@ const msgData: MsgData = {
       userId: "12345",
       userName: "brian1",
       icon: "http://placekitten.com/100/400",
-      text: "Hey I saw your last mes im not sure whatever thsisis is going",
+      text: "Hey I saw your last mes im not sure whatever thsisis is going and stuff",
     },
     {
       userId: "34567",
@@ -56,31 +56,34 @@ export default () => {
           backgroundColor={"$purple1Dark"}
           flex={1}
           // alignItems="flex-start"
-          minWidth={"100vw"}
+          maxWidth={"100%"}
           contentContainerStyle={{
             flexGrow: 1,
             justifyContent: "flex-start",
             width: "100%",
           }}
+          padding={5}
         >
           <YStack>
             {msgList?.map((m, i) => {
               return (
                 <XStack // needs on click handler
                   key={i}
-                  height={"60px"}
+                  height={60}
                   backgroundColor={"$purple5Dark"}
                   flex={1}
                   justifyContent="flex-start"
                   alignItems="center"
+                  marginBottom={5}
+                  padding={5}
                 >
                   <Avatar circular size="$3">
                     <Avatar.Image src={m.icon} />
                     <Avatar.Fallback bc="red" />
                   </Avatar>
-                  <YStack>
+                  <YStack marginLeft={5} marginRight={15}>
                     <Text>{m.userName}</Text>
-                    <Text>{m.text}</Text>
+                    <Text wordWrap="break-word">{m.text}</Text>
                   </YStack>
                 </XStack>
               );

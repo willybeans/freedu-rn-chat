@@ -6,7 +6,7 @@ export function Header(props: TextProps, color: string) {
   console.log("text: ", props);
   return (
     <YStack alignItems="center">
-      <Avatar circular size="$3">
+      <Avatar circular size="$2">
         <Avatar.Image src="http://placekitten.com/200/300" />
         <Avatar.Fallback bc="red" />
       </Avatar>
